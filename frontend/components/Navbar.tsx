@@ -28,6 +28,45 @@ function Navbar(props: NavbarProps) {
 
     return (
         <div>
+            {/* Migration Banner */}
+            <Box
+                sx={{
+                    backgroundColor: '#2b50aa',
+                    color: 'white',
+                    py: 1.5,
+                    px: 2,
+                    textAlign: 'center',
+                }}
+            >
+                <Container maxWidth={'md'}>
+                    <Typography
+                        sx={{
+                            fontSize: { xs: '0.875rem', md: '1rem' },
+                        }}
+                    >
+                        📢 <strong>Migration Notice:</strong> Sourcify is taking over openchain.xyz API. Please switch
+                        to{' '}
+                        <strong>
+                            {' '}
+                            <a
+                                href="https://4byte.sourcify.dev"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                    color: 'white',
+                                    textDecoration: 'underline',
+                                }}
+                                onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
+                                onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+                            >
+                                api.4byte.sourcify.dev
+                            </a>
+                        </strong>{' '}
+                        (same API).
+                    </Typography>
+                </Container>
+            </Box>
+
             <Head>
                 <title>{props.title}</title>
                 <meta name="description" content={props.description} />
@@ -86,7 +125,7 @@ function Navbar(props: NavbarProps) {
                         </a>
                     </Grid2>
                     <Grid2>
-                        <a href="https://docs.openchain.xyz" target={'_blank'} rel={'noreferrer noopener'}>
+                        <a href="https://docs.sourcify.dev/docs/api/" target={'_blank'} rel={'noopener'}>
                             <Description />
                         </a>
                     </Grid2>
